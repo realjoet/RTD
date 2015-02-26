@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>RTD Beacon</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <!-- <link rel="stylesheet" href="css/normalize.css"> -->
+        <link rel="stylesheet" href="css/docked.css">
+        <link rel="stylesheet" href="css/slick.css">
+        <script src="js/modernizr-2.8.3.min.js"></script>
+        <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzi_iLW0XTWeumDAAUpK5MUoo3bVwpuf8">
+        </script>
+    </head>
+
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <section class='map-destination-form'>
+            <input type='text' class='map-destination-input' placeholder='DESTINATION'>
+            <img class='map-destination-search' src='images/search.png' alt='search button'>
+            <img class='rtd-pass' src='images/RTDpass.png' alt='RTD Pass info'>
+        </section>
+
+        <div id='map'></div>
+
+        <nav class='dock'>
+
+                <div class='schedule-dock dock-item'>
+                    <!--if destinations button clicked, show bus routes/schedule with js-->
+                    <img class='dock-slider' src='images/dockSlider.png' alt='dock slider'>
+                    <img class='route-sched' src='images/routeSched.png' alt='route schedule'>
+
+                    <!--if shops buttons clicked, show shop info with js-->
+                </div>
+
+                <div class='calendar-dock dock-item'>
+                    <!--calendar form inserted; day of week marked, mm/yy noted via js-->
+                    <!--place day of month with js-->
+                    <img class='dock-slider' src='images/dockSlider.png' alt='dock slider'>
+                    <div class='calendar-dock__quick-info'>
+                        <p id='current-date'>Monday, November 17th, 2014</p>
+                        <table class='calendar'> 
+                            <tr class='calendar__header'>
+                                <td colspan='2' id='calendar__month-down'><</td>
+                                <td COLSPAN='3' id='calendar__mmyy'>11/14</td> 
+                                <td colspan='2' id='calendar__month-down'>></td>
+                            </tr>
+                            <tr class='calendar__week'> 
+                                <td>S</td>
+                                <td>M</td>
+                                <td>T</td>
+                                <td>W</td>
+                                <td>T</td>
+                                <td>F</td>
+                                <td>S</td>
+                            </tr>
+                            <tr class='calendar__week'> 
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>1</td>
+                            </tr>
+                            <tr class='calendar__week'> 
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
+                                <td>5</td>
+                                <td>6</td>
+                                <td>7</td>
+                                <td>8</td>
+                            </tr>
+                            <tr class='calendar__week'> 
+                                <td>9</td>
+                                <td>10</td>
+                                <td>11</td>
+                                <td>12</td>
+                                <td>13</td>
+                                <td>14</td>
+                                <td>15</td>
+                            </tr>
+                            <tr class='calendar__week'> 
+                                <td>16</td>
+                                <td id='calendar__dow'>17</td>
+                                <td>18</td>
+                                <td>19</td>
+                                <td>20</td>
+                                <td>21</td>
+                                <td>22</td>
+                            </tr>
+                            <tr class='calendar__week'> 
+                                <td>23</td>
+                                <td>24</td>
+                                <td>25</td>
+                                <td>26</td>
+                                <td>27</td>
+                                <td>28</td>
+                                <td>29</td>
+                            </tr>
+                            <tr class='calendar__week'> 
+                                <td>30</td>
+                                <td>31</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
+
+                        <!-- <p id='current-date'>17</p> -->
+
+                    </div>
+
+                </div>
+
+                <div class='clock dock-item'>
+                    <!--time created via js; optional 12/24 hr mode-->
+                    <img class='dock-slider' src='images/dockSlider.png' alt='dock slider'>
+                    <div class='clock-dock'>
+                        <p class='clock-dock__time'>8:26</p><p class='clock-dock__tod'>AM</p>
+                    </div>
+                </div>
+
+                <div class='weather dock-item'>
+                    <img class='dock-slider' src='images/dockSlider.png' alt='dock slider'>
+                    <div class='weather-dock'>
+                        <p class='weather-dock__temp'>18</p><p class='weather-dock__temp-base'>F</p>
+                    </div>
+                </div>
+
+                <div class='schedule-dock dock-item'>
+                    <!--if destinations button clicked, show bus routes/schedule with js-->
+                    <img class='dock-slider' src='images/dockSlider.png' alt='dock slider'>
+                    <img class='route-sched' src='images/foodAroundMe.jpg' alt="what's around you">
+
+                    <!--if shops buttons clicked, show shop info with js-->
+                </div>
+
+                <div class='schedule-dock dock-item'>
+                    <!--if destinations button clicked, show bus routes/schedule with js-->
+                    <img class='dock-slider' src='images/dockSlider.png' alt='dock slider'>
+                    <img class='route-sched' src='images/RTDstatus.png' alt='route status updates'>
+
+                    <!--if shops buttons clicked, show shop info with js-->
+                </div>
+
+        </nav>
+
+        <script type='text/javascript' src="js/jquery-2.1.1.min.js"></script>
+        <script type='text/javascript' src="js/slick.min.js"></script>
+        <script type='text/javascript' src="js/beacon-slider.js"></script>
+        <script type='text/javascript' src='js/beacon-search.js'></script>
+
+        <script>
+            $('.dock').slick(); 
+        </script>
+
+
+    </body>
+</html>
